@@ -1,3 +1,8 @@
+# 원본 workbook 출처
+[BaaaaaaaaaaarkingDog님 깃헙](https://github.com/encrypted-def/basic-algo-lecture)
+
+원본 repository는 cpp로 모든 풀이가 작성되어 있어 python으로 해결한 문제들을 업로드하고 있습니다.
+
 # 문제집 설명
 
 일부 단원을 제외하면 각 단원에 대응되는 문제집이 있습니다. 설령 이론을 잘 이해했더라도 문제를 풀어내지 못한다면 아무런 의미가 없기 때문에 반드시 문제를 많이 풀어보셔야 합니다.

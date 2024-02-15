@@ -2,7 +2,6 @@ import sys
 input = sys.stdin.readline
 
 def Z(n:int, r:int, c:int):
-    assert r >= 0 and c >= 0
     if n == 1:
         return 2*r + c
     else:

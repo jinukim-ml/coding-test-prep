@@ -1,6 +1,6 @@
 from collections import deque
 
-def solution2(maps):
+def solution(maps):
     n, m = len(maps), len(maps[0])
     dx, dy = [1, -1, 0, 0], [0, 0, 1, -1]  # Movement directions (right, left, down, up)
 

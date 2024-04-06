@@ -25,9 +25,9 @@ def solution(n, t, m, timetable):
             seats -= 1
             last_crew = timetable.popleft()
 
-    if seats > 0:
+    if seats > 0: # There are available seats -> get in line when the last bus arrives.
         answer = busses[-1]
-    else:
+    else: # No seats on the last bus -> arrive 1 minute earlier than the last crew
         answer = last_crew - timedelta(minutes=1)
 
     answer = answer.strftime("%H:%M")

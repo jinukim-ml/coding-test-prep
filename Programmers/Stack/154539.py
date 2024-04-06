@@ -12,12 +12,9 @@ def solution(numbers):
     answer = [-1] * n
     stack = deque()
 
-    for i, curr in enumerate(numbers):
-        if len(stack) == 0 or stack[-1][-1] >= curr:
-            stack.append((i, curr)) # push
-        elif stack[-1][-1] < curr:
-            while len(stack) > 0 and stack[-1][-1] < curr:
-                idx, _ = stack.pop()
-                answer[idx] = curr
-            stack.append((i, curr))
+    for i in range(n):
+        while len(stack) > 0 and numbers[stack[-1]] < numbers[i]:
+            idx = stack.pop()
+            answer[idx] = numbers[i]
+        stack.append(i) # push
     return answer

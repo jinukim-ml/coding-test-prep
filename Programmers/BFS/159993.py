@@ -42,10 +42,10 @@ def solution(maps):
         if found == True:
             break
         
-    # Reset queue, and visted
+    
     if lever_x == -1 and lever_y == -1:
         return -1
-    else:
+    else: # Reset queue, and visted
         q = deque([[lever_y, lever_x]])
         vis = [[False] * n for _ in range(m)]
         vis[lever_y][lever_x] = True

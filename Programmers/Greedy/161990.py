@@ -1,6 +1,6 @@
 '''
 Solution for https://school.programmers.co.kr/learn/courses/30/lessons/161990
-Type: Graph
+Type: Geedy
 '''
 
 # 28 days in a month -> 28*12 = 336 days in a year

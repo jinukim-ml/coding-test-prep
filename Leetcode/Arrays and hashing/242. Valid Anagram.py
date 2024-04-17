@@ -15,7 +15,6 @@ class Solution(object):
             t_hash[t[i]] = t_hash.get(t[i], 0) + 1
         
         s_keys = sorted(s_hash.keys())
-        t_keys = sorted(t_hash.keys())
 
         for key in s_keys:
             if key not in t_hash:

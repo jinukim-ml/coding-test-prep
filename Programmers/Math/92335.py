@@ -11,10 +11,9 @@ def convert(n, k):
 
 def solution(n, k):
     converted = convert(n, k)
-    stripped = [sub_string for sub_string in converted.split('0') if sub_string]
     nums = []
-    for num in stripped:
-        if num != '1':
+    for num in converted.split('0'):
+        if num and num != '1':
             nums.append(int(num))
             
     answer = 0

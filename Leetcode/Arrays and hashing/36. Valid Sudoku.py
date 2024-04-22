@@ -15,7 +15,7 @@ class Solution:
             if counter and counter.most_common(1)[0][1] >= 2:
                 return False
         
-        for i in range(0, 9, 3): # 3x3 grid check
+        for i in range(0, 9, 3): # check 3x3 grids
             for j in range(0, 9, 3):
                 grid = []
                 for row in range(i, i+3):

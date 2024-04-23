@@ -6,7 +6,6 @@ def solution(nums):
     streak = 1
     longest_streak = 0
     for i in range(1, len(nums)):
-        print(f'nums[i]: {nums[i]}, nums[i-1]: {nums[i-1]}')
         if nums[i] - nums[i-1] == 1:
             streak += 1
         else:

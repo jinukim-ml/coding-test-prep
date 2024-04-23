@@ -25,7 +25,6 @@ def solution(fees, records):
         cumulativetime[car] = endofday - parked[car] + cumulativetime.get(car, 0)
     
     answer = []
-    # print(cumulativetime)
     for car in sorted(cumulativetime.keys()):
         fee = fees[1] + ceil((cumulativetime[car] - fees[0])/fees[2]) * fees[3] * (cumulativetime[car] - fees[0] > 0)
         answer.append(fee)

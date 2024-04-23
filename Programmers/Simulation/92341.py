@@ -1,5 +1,6 @@
 '''
 Solution for https://school.programmers.co.kr/learn/courses/30/lessons/92341
+Title: 주차 요금 계산
 Type: Simulation
 '''
 from math import ceil

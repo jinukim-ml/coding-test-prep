@@ -8,6 +8,6 @@ class Solution:
         for k in table.keys():
             if target - k in table:
                 if k == target - k and len(table[target - k]) > 1:
-                    return[table[target - k][0], table[target - k][1]]
+                    return [table[target - k][0], table[target - k][1]]
                 elif k != target - k:
-                    return[table[k][0], table[target-k][0]]
+                    return [table[k][0], table[target-k][0]]

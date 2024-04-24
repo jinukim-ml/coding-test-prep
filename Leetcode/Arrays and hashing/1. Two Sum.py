@@ -4,9 +4,6 @@ class Solution:
         table = {}
         for i in range(len(nums)):
             table[nums[i]] = table.get(nums[i], []) + [i]
-        nums = sorted(nums)
-        left = 0
-        right = len(nums)-1
 
         for k in table.keys():
             if target - k in table:

@@ -4,7 +4,6 @@ class Solution:
         nswer = 0
         left = 0
         right = len(height) - 1
-        # formula = (right_idx - left_idx) * min(height[left], height[right])
         while left < right:
             area = (right - left) * min(height[left], height[right])
             if nswer < area:

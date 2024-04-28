@@ -5,7 +5,6 @@ class Solution: # Original solution. O(mn)
             return False
         t1, t2 = {}, {}
         
-        
         for i in range(n1):
             t1[s1[i]] = t1.get(s1[i], 0) + 1
             t2[s2[i]] = t2.get(s2[i], 0) + 1

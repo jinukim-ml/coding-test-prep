@@ -1,7 +1,5 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
-        # every character in t is included in the window
-        # minimum window substring
         if len(s) < len(t):
             return ""
         

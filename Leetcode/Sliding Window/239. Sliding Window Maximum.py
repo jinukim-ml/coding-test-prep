@@ -19,7 +19,6 @@ class Solution:
                 dq.pop()
             dq.append(nums[r])
             
-            # print(f'r: {r}, nums[r]: {nums[r]}, dq: {dq}')
             if r >= k-1:
                 nswer.append(dq[0])
         return nswer

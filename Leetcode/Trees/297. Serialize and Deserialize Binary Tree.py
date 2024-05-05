@@ -13,9 +13,6 @@ class Codec:
         :type root: TreeNode
         :rtype: str
         """
-        if not root:
-            return ""
-
         res = []
         # preorder traversal
 

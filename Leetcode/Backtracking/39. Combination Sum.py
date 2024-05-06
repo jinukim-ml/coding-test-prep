@@ -13,5 +13,5 @@ class Solution:
         elif agg < self.target:
             for j in range(idx, len(self.candidates)):
                 curr.append(self.candidates[j])
-                self.DFS(j, agg + self.candidates[j], curr[])
+                self.DFS(j, agg + self.candidates[j], curr)
                 curr.pop()

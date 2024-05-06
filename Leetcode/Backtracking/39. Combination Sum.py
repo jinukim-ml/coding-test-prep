@@ -9,9 +9,9 @@ class Solution:
 
     def DFS(self, idx: int, agg: int, curr: List[int]):
         if agg == self.target:
-            self.res.append(curr[:]) # somehow i don't slice this list it doesn't work?
+            self.res.append(curr[:])
         elif agg < self.target:
             for j in range(idx, len(self.candidates)):
                 curr.append(self.candidates[j])
-                self.DFS(j, agg + self.candidates[j], curr[:]) # somehow i don't slice this list it doesn't work?
+                self.DFS(j, agg + self.candidates[j], curr[])
                 curr.pop()

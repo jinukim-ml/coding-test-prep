@@ -8,7 +8,6 @@ class Interval(object):
         self.start = start
         self.end = end
 
-
 class Solution:
     def canAttendMeetings(self, intervals: List[Interval]) -> bool:
         intervals.sort(key=lambda item: item.start)

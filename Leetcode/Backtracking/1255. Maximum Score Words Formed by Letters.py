@@ -23,7 +23,7 @@ class Solution:
             for j in range(i, len(words)):
                 localcnt = counter.copy()
 
-                pos, points = 0, 0
+                pos = 0
                 while pos < len(words[j]) and words[j][pos] in localcnt and localcnt[words[j][pos]] > 0:
                     localcnt[words[j][pos]] -= 1
                     pos += 1

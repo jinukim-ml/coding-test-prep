@@ -12,8 +12,6 @@ class TimeMap:
             self.table[key].insert(idx, (value, timestamp))
 
     def get(self, key: str, timestamp: int) -> str:
-        # print(f'self.table: {self.table}')
-        # print(f'key: {key}, timestamp: {timestamp}')
         if key not in self.table:
             return ""
         

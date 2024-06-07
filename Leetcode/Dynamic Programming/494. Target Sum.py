@@ -17,7 +17,3 @@ class Solution:
             return dp[(i, val)]
         
         return backtrack(0, 0)
-
-# Solution().findTargetSumWays([35,37,9,29,36,0,44,32,44,13,2,37,14,21,41,36,9,23,41,17], 42)
-
-Solution().findTargetSumWays([i for i in range(1, 21)], 9000)

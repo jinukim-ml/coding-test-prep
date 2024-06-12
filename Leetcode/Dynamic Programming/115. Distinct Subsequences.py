@@ -21,7 +21,7 @@ class Solution: # Top-down solution
         def dfs(i, j):
             if j == len(t):
                 return 1
-            if i == len(s):
+            if len(s) - i < len(t) - j:
                 return 0
             if (i,j) in dp:
                 return dp[(i,j)]

@@ -9,10 +9,8 @@ class Solution:
         def dfs(node: TreeNode, val: int) -> int:
             if not node:
                 return val
-            right = dfs(node.right, val)
-            left = dfs(node.left, right + node.val)
-            node.val += right
-            return left
+            node.val += dfs(node.right, val)
+            return dfs(node.left, node.val)
         
         dfs(root, 0)
         return root

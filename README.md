@@ -1,10 +1,10 @@
 # coding-test-prep
 Code snippets and other things for coding tests
 
-[BOJ](BOJ): solutions for [BOJ](https://boj.kr)
+[BOJ](BOJ): Problems from [BOJ](https://boj.kr)
 
-[Leetcode](Leetcode): My grind through [Neetcode 150](https://neetcode.io/practice)
+[Leetcode](Leetcode): [Neetcode 150](https://neetcode.io/practice) + other problems I solved
 
-[Programmers](Programmers): solutions for [Programmers](https://programmers.co.kr/)
+[Programmers](Programmers): Problems from [Programmers](https://programmers.co.kr/)
 
-[snippets](snippets): useful snippets for competitive programming
+[snippets](snippets): useful snippets

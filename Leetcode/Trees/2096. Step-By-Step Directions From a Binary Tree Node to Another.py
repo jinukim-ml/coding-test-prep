@@ -27,3 +27,11 @@ class Solution:
             s.pop()
             d.pop()
         return "".join("U" * len(s)) + "".join(reversed(d))
+
+'''
+After search() function, we have the path to each node (reversed).
+By deleting common prefix, we have the path to each node from LCA (still reversed).
+The final result utilizes the fact that length of the list s is the length from LCA to s.
+To go from s to LCA, we need to go up len(s) times. And then we go to d.
+Solution credit: votrubac from Leetcode (https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/solutions/1612105/3-steps/)
+'''

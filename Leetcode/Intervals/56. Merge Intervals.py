@@ -1,15 +1,16 @@
-from typing import List
-
 class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        intervals = sorted(intervals)
-        ans = [intervals[0]]
+    def merge(self, intervals: list[list[int]]) -> list[list[int]]:
+        intervals.sort() # the data is not guaranteed to be sorted in ascending order
+        
+        ans, i = [], 1
+        ans.append(intervals[0])
+        while i < len(intervals):
+            st, en = ans[-1]
 
-        for _, (st, en) in enumerate(intervals, 1):
-            right = ans[-1][1]
-
-            if right >= st:
-                ans[-1][1] = max(right, en)
+            if st <= intervals[i][0] <= en:
+                en = max(en, intervals[i][1])
+                ans[-1] = [st, en]
             else:
-                ans.append([st, en])
+                ans.append(intervals[i])
+            i += 1
         return ans

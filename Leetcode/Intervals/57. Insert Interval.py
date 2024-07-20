@@ -18,24 +18,22 @@ class Solution:
         
         return ans
     
-class Solution: # maybe a little bit slower but I think this is more easier to understand/write
+# I think this is more easier to understand/write
+class Solution:
     def insert(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
         idx = bisect_left(intervals, newInterval)
         intervals = intervals[:idx] + [newInterval] + intervals[idx:]
 
         ans, i = [], 0
-        curr = 0
         while i < len(intervals):
             if not ans:
                 ans.append(intervals[i])
             else:
-                st, en = ans[curr]
+                st, en = ans[-1]
                 if st <= intervals[i][0] <= en:
-                    st = min(st, intervals[i][0])
                     en = max(en, intervals[i][1])
-                    ans[curr] = [st, en]
+                    ans[-1] = [st, en]
                 else:
                     ans.append(intervals[i])
-                    curr += 1
                 i += 1
         return ans

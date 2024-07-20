@@ -1,8 +1,7 @@
 from bisect import bisect_left
-from typing import List
 
 class Solution:
-    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+    def insert(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
         idx = bisect_left(intervals, newInterval[0], key=lambda item: item[1])
         if idx == len(intervals):
             intervals.append(newInterval)
@@ -17,4 +16,26 @@ class Solution:
             else:
                 ans.append([st, en])
         
+        return ans
+    
+class Solution: # maybe a little bit slower but I think this is more easier to understand/write
+    def insert(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
+        idx = bisect_left(intervals, newInterval)
+        intervals = intervals[:idx] + [newInterval] + intervals[idx:]
+
+        ans, i = [], 0
+        curr = 0
+        while i < len(intervals):
+            if not ans:
+                ans.append(intervals[i])
+            else:
+                st, en = ans[curr]
+                if st <= intervals[i][0] <= en:
+                    st = min(st, intervals[i][0])
+                    en = max(en, intervals[i][1])
+                    ans[curr] = [st, en]
+                else:
+                    ans.append(intervals[i])
+                    curr += 1
+                i += 1
         return ans

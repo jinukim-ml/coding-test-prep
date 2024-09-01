@@ -3,8 +3,7 @@ class Solution:
         if len(original) / n != m:
             return []
         else:
-            ans = [[0 for _ in range(n)] for _ in range(m)]
+            ans = []
             for row in range(m):
-                for col in range(n):
-                    ans[row][col] = original[row*n+col]
+                ans.append(original[row * n:row * n + n])
             return ans

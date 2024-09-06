@@ -14,7 +14,6 @@ class Solution:
         while node:
             if node.val in nums:
                 prev.next = node.next
-                node.next = None
                 node = prev.next
             else:
                 prev = node

@@ -1,6 +1,5 @@
 class Solution:
     def xorQueries(self, arr: list[int], queries: list[list[int]]) -> list[int]:
-        precalc = []
         xor = 0
         for i in range(len(arr)):
             xor ^= arr[i]

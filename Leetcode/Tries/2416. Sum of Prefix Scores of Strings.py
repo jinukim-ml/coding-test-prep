@@ -8,7 +8,7 @@ class Trie:
     
     def add(self, w: str) -> None:
         node = self.root
-        for i, ch in enumerate(w):
+        for ch in w:
             if ch not in node.children:
                 node.children[ch] = [TrieNode(), 1]
             else:
@@ -18,7 +18,7 @@ class Trie:
     def search(self, w: str) -> int:
         node = self.root
         res = 0
-        for i, ch in enumerate(w):
+        for ch in w:
             if ch in node.children:
                 res += node.children[ch][1]
                 node = node.children[ch][0]

@@ -6,7 +6,6 @@ class MyCalendar:
 
     def book(self, start: int, end: int) -> bool:
         if not self.calendar:
-            print("Initial insertion")
             self.calendar.append((start, end))
             return True
         

@@ -99,7 +99,7 @@ class AllOne:
             iter(self.head.next.keys)
         )  # Return one of the keys from the head's next node
 
-    def removeNode(self, node):
+    def removeNode(self, node: Node):
         prevNode = node.prev
         nextNode = node.next
 

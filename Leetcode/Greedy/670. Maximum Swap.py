@@ -11,7 +11,6 @@ class Solution: # O(n)
                     return int(''.join(num_l))
         return num
 
-
 class Solution: # brute force approach O(n^2)
     def maximumSwap(self, num: int) -> int:
         num = list(str(num))

@@ -16,6 +16,21 @@ class Solution: # Siliding window solution O(N)
                 ans[i-k+1] = nums[dq[-1]]
         return ans
 
+class Solution: # Another sliding window solution O(N)
+    def resultsArray(self, nums: list[int], k: int) -> list[int]:
+        ans = []
+        l = 0
+
+        for r in range(len(nums)):
+            if r > 0 and nums[r] != nums[r - 1] + 1:
+                l = r
+            if r >= k - 1:
+                if r - l + 1 >= k:
+                    ans.append(nums[r])
+                else:
+                    ans.append(-1)
+        return ans
+
 class Solution: # brute force solution O(N^2)
     def resultsArray(self, nums: list[int], k: int) -> list[int]:
         ans = []

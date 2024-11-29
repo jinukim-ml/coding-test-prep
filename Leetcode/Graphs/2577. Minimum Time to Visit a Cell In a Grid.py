@@ -22,7 +22,6 @@ class Solution:
                     if t >= grid[nr][nc]:
                         new_t = t+1
                     else:
-                        diff = grid[nr][nc] - t
                         if (grid[nr][nc] - t)%2: # odd
                             new_t = grid[nr][nc]
                         else: # even

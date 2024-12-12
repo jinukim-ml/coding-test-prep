@@ -1,6 +1,6 @@
 import heapq
 
-class Solution:
+class Solution: # O(n+k)
     def pickGifts(self, gifts: list[int], k: int) -> int:
         h = []
         for g in gifts:

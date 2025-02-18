@@ -26,6 +26,7 @@ class Solution:
                         arr.pop()
                         seen.remove(n)
             return False
+        
         for n in range(1, 10):
             arr.append(n)
             seen.add(n)

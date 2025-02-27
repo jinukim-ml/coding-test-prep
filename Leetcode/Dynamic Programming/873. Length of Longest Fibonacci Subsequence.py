@@ -22,3 +22,20 @@ class Solution:
                 if length:
                     res = max(res, length+2)
         return res
+
+class Solution: # More optimized solution. Source: leetcode
+    def lenLongestFibSubseq(self, arr: list[int]) -> int:
+        dp = {}
+        res = 0
+        for i, num in enumerate(arr):
+            dp[num] = defaultdict(lambda: 2)
+            for j in range(i-1, -1, -1):
+                f1 = arr[j]
+                f0 = num - f1
+                if f0 >= f1:
+                    break
+                if f0 not in dp:
+                    continue
+                dp[num][f1] = dp[f1][f0] + 1
+                res = max(res, dp[num][f1])
+        return res

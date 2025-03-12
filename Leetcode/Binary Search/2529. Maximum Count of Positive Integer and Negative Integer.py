@@ -9,8 +9,7 @@ class Solution:
         def count_positives() -> int:
             if nums[-1] <= 0:
                 return 0
-            idx = bisect_right(nums, 0)
-            return len(nums) - idx
+            return len(nums) - bisect_right(nums, 0)
         
         negatives = count_negatives()
         positives = count_positives()

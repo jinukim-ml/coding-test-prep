@@ -1,4 +1,4 @@
-class Solution: # O (n)
+class Solution: # O(n)
     def doesAliceWin(self, s: str) -> bool:
         vowels = set(['a', 'e', 'i', 'o', 'u'])
         for ch in s:

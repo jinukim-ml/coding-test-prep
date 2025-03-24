@@ -1,6 +1,6 @@
 class Solution:
     def countDays(self, days: int, meetings: list[list[int]]) -> int:
-        meetings.sort(key=lambda x: (x[1], x[0]))
+        meetings.sort(key=lambda x: x[1])
         i = 0
         while meetings:
             i = len(meetings)-1

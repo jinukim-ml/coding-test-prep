@@ -1,4 +1,4 @@
-class Solution: # O(m). m: len(meetings)
+class Solution: # O(m log m). m: len(meetings)
     def countDays(self, days: int, meetings: list[list[int]]) -> int:
         meetings.sort(key=lambda x: x[1])
         i = 0

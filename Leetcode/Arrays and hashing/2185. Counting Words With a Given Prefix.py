@@ -45,3 +45,12 @@ class Solution:
         for w in words:
             trie.insert(w)
         return trie.count(pref)
+
+# Simplest and fastest solution
+class Solution:
+    def prefixCount(self, words: list[str], pref: str) -> int:
+        res = 0
+        for w in words:
+            if w[:len(pref)] == pref:
+                res += 1
+        return res

@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-class Solution:
+class Solution: # time complexity: O(n^2 * m), space complexity: O(n)
     def getWordsInLongestSubsequence(self, words: list[str], groups: list[int]) -> list[str]:
         def is_valid(i: int, j: int) -> bool:
             if groups[i] == groups[j]:

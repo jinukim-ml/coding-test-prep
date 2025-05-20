@@ -1,15 +1,13 @@
 class Solution:
     def isZeroArray(self, nums: list[int], queries: list[list[int]]) -> bool:
-        difference = [0] * (len(nums) + 1)
+        diff = [0] * (len(nums)+1)
         for l, r in queries:
-            difference[l] -= 1
-            difference[r+1] += 1
+            diff[l] += 1
+            diff[r+1] -= 1
         
-        for i in range(1, len(difference)):
-            difference[i] += difference[i-1]
-        
+        running_sum = 0
         for i in range(len(nums)):
-            nums[i] += difference[i]
-            if nums[i] > 0:
+            running_sum += diff[i]
+            if running_sum < nums[i]:
                 return False
         return True

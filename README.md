@@ -3,7 +3,7 @@ Code snippets and other things for coding tests
 
 [BOJ](BOJ): Problems from [BOJ](https://boj.kr)
 
-[Leetcode](Leetcode): [Neetcode 150](https://neetcode.io/practice) + other problems I solved
+[Leetcode](Leetcode): [Neetcode](https://neetcode.io) + other problems I solved on Leetcode
 
 [Programmers](Programmers): Problems from [Programmers](https://programmers.co.kr/)
 

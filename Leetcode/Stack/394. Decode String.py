@@ -1,7 +1,6 @@
 class Solution:
     def decodeString(self, s: str) -> str:
         stack = []
-        res = ''
         for ch in s:
             if ch == ']':
                 reverse_stack = []

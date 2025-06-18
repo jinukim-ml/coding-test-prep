@@ -3,11 +3,8 @@ class Solution:
         n = len(nums)
         nums.sort()
         res = []
-        l = 0
-        while l < n:
-            r = l + 2
-            if nums[r] - nums[l] > k:
+        for i in range(0, n, 3):
+            if nums[i+2] - nums[i] > k:
                 return []
-            res.append(nums[l:r+1])
-            l = r+1
+            res.append(nums[i:i+3])
         return res

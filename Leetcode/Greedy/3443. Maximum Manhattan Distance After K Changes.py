@@ -22,3 +22,19 @@ class Solution:
                 x = freq['W'] - freq['E'] + 2*change
             res = max(res, x+y)
         return res
+
+class Solution: # a little bit slower but more readable
+    def maxDistance(self, s: str, k: int) -> int:
+        freq = defaultdict(int)
+        res = 0
+        for ch in s:
+            freq[ch] += 1
+            base_x = abs(freq['E'] - freq['W'])
+            base_y = abs(freq['N'] - freq['S'])
+
+            x_opp = min(freq['E'], freq['W'])
+            y_opp = min(freq['N'], freq['S'])
+
+            flips = min(k, x_opp + y_opp)
+            res = max(res, base_x + base_y + 2*flips)
+        return res

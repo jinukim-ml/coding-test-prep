@@ -22,3 +22,16 @@ class Solution:
             _, n = heapq.heappop(temp)
             res.append(n)
         return res
+
+class Solution: # shorter solution
+    def maxSubsequence(self, nums: list[int], k: int) -> list[int]:
+        for i, n in enumerate(nums):
+            nums[i] = (n,i)
+        nums.sort(reverse=True)
+        res = []
+        for i in range(k):
+            res.append(nums[i])
+        res.sort(key=lambda x: x[1])
+        for i in range(k):
+            res[i] = res[i][0]
+        return res

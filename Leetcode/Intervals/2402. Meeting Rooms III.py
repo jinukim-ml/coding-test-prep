@@ -4,9 +4,8 @@ class Solution:
     def mostBooked(self, n: int, meetings: list[list[int]]) -> int:
         meetings.sort()
         counts = [0 for _ in range(n)]
-        available, in_use = [], []
-        for room in range(n):
-            heapq.heappush(available, room)
+        available = [i for i in range(n)]
+        in_use = []
         for i in range(len(meetings)):
             while in_use and in_use[0][0] <= meetings[i][0]:
                 _, room = heapq.heappop(in_use)

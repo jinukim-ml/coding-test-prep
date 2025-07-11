@@ -2,7 +2,7 @@ import heapq
 
 class Solution:
     def mostBooked(self, n: int, meetings: list[list[int]]) -> int:
-        meetings.sort()
+        meetings.sort(key=lambda x: x[0])
         counts = [0 for _ in range(n)]
         available = [i for i in range(n)]
         in_use = []

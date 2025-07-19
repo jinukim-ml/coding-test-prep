@@ -1,37 +1,47 @@
+from collections import defaultdict
+
+# Trie solution
 class TrieNode:
     def __init__(self):
-        self.children = {}
+        self.nodes = defaultdict(str)
         self.end = False
 
 class Trie:
     def __init__(self):
         self.root = TrieNode()
-    def insert(self, path: str) -> bool:
-        node = self.root
+    def add(self, path: str) -> bool:
+        curr = self.root
         path = path.split('/')
-        i = 0
-        while i < len(path) and path[i] in node.children:
-            node = node.children[path[i]]
-            i += 1
-        if node.end:
-            return True
-        else:
-            while i < len(path):
-                newnode = TrieNode()
-                node.children[path[i]] = newnode
-                node = newnode
-                i += 1
-            node.end = True
-            return False
+        for p in path:
+            if p == '':
+                continue
+            if curr.end:
+                return False
+            else:
+                if p in curr.nodes:
+                    curr = curr.nodes[p]
+                else:
+                    curr.nodes[p] = TrieNode()
+                    curr = curr.nodes[p]
+        curr.end = True
+        return True
 
 class Solution:
     def removeSubfolders(self, folder: list[str]) -> list[str]:
-        folder.sort()
         trie = Trie()
-        ans = []
+        folder.sort()
+        res = []
         for path in folder:
-            if trie.insert(path):
-                continue
-            else:
-                ans.append(path)
-        return ans
+            if trie.add(path):
+                res.append(path)
+        return res
+
+# String solution
+class Solution:
+    def removeSubfolders(self, folder: list[str]) -> list[str]:
+        folder.sort()
+        res = []
+        for p in folder:
+            if not res or not p.startswith(res[-1] + '/'):
+                res.append(p)
+        return res

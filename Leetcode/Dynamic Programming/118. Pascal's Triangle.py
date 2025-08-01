@@ -22,12 +22,10 @@ class Solution: # DP
     def generate(self, numRows: int) -> list[list[int]]:
         res = [[1]]
         for i in range(2, numRows+1):
-            row = []
-            for j in range(i):
-                if 0 < j < i-1:
-                    val = res[-1][j-1] + res[-1][j]
-                else:
-                    val = 1
+            row = [1]
+            for j in range(1, i-1):
+                val = res[-1][j-1] + res[-1][j]
                 row.append(val)
+            row.append(1)
             res.append(row)
         return res

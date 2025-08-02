@@ -8,7 +8,7 @@ class Solution:
         for k in cnt_all:
             if cnt_all[k]%2:
                 return -1
-        min_cost = 2*min(min(basket1), min(basket2))
+        ref_cost = 2*min(min(basket1), min(basket2)) # reference cost
         
         swaps = []
         for k in cnt1:
@@ -23,5 +23,5 @@ class Solution:
         swaps.sort()
         res = 0
         for i in range(len(swaps)//2):
-            res += min(swaps[i], min_cost)
+            res += min(swaps[i], ref_cost)
         return res

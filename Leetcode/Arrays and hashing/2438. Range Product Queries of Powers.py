@@ -29,3 +29,27 @@ class Solution:
                 val = prefix[r]
             res.append(val%MOD)
         return res
+
+class Solution: # bit manipulation
+    def productQueries(self, n: int, queries: list[list[int]]) -> list[int]:
+        MOD = 1000000000+7
+        powers = []
+        while n:
+            lsb = n & -n
+            powers.append(lsb)
+            n ^= lsb
+        
+        prefix = []
+        prod = 1
+        for i in range(len(powers)):
+            prod *= powers[i]
+            prefix.append(prod)
+        
+        res = []
+        for l, r in queries:
+            if l:
+                val = prefix[r]//prefix[l-1]
+            else:
+                val = prefix[r]
+            res.append(val%MOD)
+        return res

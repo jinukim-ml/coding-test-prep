@@ -1,28 +1,17 @@
-from collections import Counter
-from typing import List
+from collections import defaultdict
+
 class Solution:
-    def isValidSudoku(self, board: List[List[str]]) -> bool:
-        for i in range(len(board)): # check rows
-            counter = Counter(board[i])
-            counter.pop('.')
-            if counter and counter.most_common(1)[0][1] >= 2:
-                return False
-        
-        transpose = list(zip(*board))
-        for col in transpose: # check columns
-            counter = Counter(col)
-            counter.pop('.')
-            if counter and counter.most_common(1)[0][1] >= 2:
-                return False
-        
-        for i in range(0, 9, 3): # check 3x3 grids
-            for j in range(0, 9, 3):
-                grid = []
-                for row in range(i, i+3):
-                    grid += (board[row][j:j+3])
-                counter = Counter([*grid])
-                counter.pop('.')
-                if counter and counter.most_common(1)[0][1] >= 2:
-                    return False
-        
+    def isValidSudoku(self, board: list[list[str]]) -> bool:
+        rows = defaultdict(set)
+        cols = defaultdict(set)
+        subgrids = {0: set(), 1: set(), 2: set(), 3: set(), 4: set(), 5: set(), 6: set(), 7: set(), 8: set()}
+        for r in range(9):
+            for c in range(9):
+                if board[r][c] != '.':
+                    section_num = r//3*3+c//3
+                    if board[r][c] != '.' and board[r][c] in rows[r] or board[r][c] in cols[c] or board[r][c] in subgrids[section_num]:
+                        return False
+                    rows[r].add(board[r][c])
+                    cols[c].add(board[r][c])
+                    subgrids[section_num].add(board[r][c])
         return True

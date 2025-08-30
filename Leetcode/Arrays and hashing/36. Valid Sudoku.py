@@ -4,7 +4,7 @@ class Solution:
     def isValidSudoku(self, board: list[list[str]]) -> bool:
         rows = defaultdict(set)
         cols = defaultdict(set)
-        subgrids = {0: set(), 1: set(), 2: set(), 3: set(), 4: set(), 5: set(), 6: set(), 7: set(), 8: set()}
+        subgrids = defaultdict(set)
         for r in range(9):
             for c in range(9):
                 if board[r][c] != '.':

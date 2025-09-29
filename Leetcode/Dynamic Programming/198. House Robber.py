@@ -1,7 +1,5 @@
-from typing import List
-
 class Solution: # Recursion + memoization
-    def rob(self, nums: List[int]) -> int:
+    def rob(self, nums: list[int]) -> int:
         self.houses = nums
         self.memo = [-1] * len(nums)
         return self.recur(len(nums)-1)
@@ -18,7 +16,7 @@ class Solution: # Recursion + memoization
         return res
     
 class Solution: # Iteration + memoization
-    def rob(self, nums: List[int]) -> int:
+    def rob(self, nums: list[int]) -> int:
         if len(nums) == 1:
             return nums[0]
         memo = [-1] * (len(nums)+1)
@@ -30,7 +28,7 @@ class Solution: # Iteration + memoization
         return memo[len(nums)]
     
 class Solution: # Iteration w/ 2 variables
-    def rob(self, nums: List[int]) -> int:
+    def rob(self, nums: list[int]) -> int:
         if len(nums) == 1:
             return nums[0]
 
@@ -41,3 +39,10 @@ class Solution: # Iteration w/ 2 variables
             prev1 = max(prev1, n + prev2)
             prev2 = tmp
         return prev1
+    
+class Solution: # bottom-up
+    def rob(self, nums: list[int]) -> int:
+        dp = [0 for _ in range(len(nums)+2)]
+        for i in range(len(nums)-1, -1, -1):
+            dp[i] = max(nums[i]+dp[i+2], dp[i+1])
+        return dp[0]

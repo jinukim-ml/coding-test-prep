@@ -1,6 +1,6 @@
 from collections import deque
 
-class Solution:
+class Solution: # bfs
     def pacificAtlantic(self, heights: list[list[int]]) -> list[list[int]]:
         m, n = len(heights), len(heights[0])
         directions = [(-1,0), (0,1), (1,0), (0,-1)]
@@ -36,5 +36,32 @@ class Solution:
         res = []
         for r, c in visited_pacific:
             if (r,c) in visited_atlantic:
+                res.append([r,c])
+        return res
+
+class Solution: # dfs
+    def pacificAtlantic(self, heights: list[list[int]]) -> list[list[int]]:
+        m, n = len(heights), len(heights[0])
+        directions = [(-1,0), (0,1), (1,0), (0,-1)]
+        
+        def dfs(r: int, c: int, prev: int, visited: set) -> None:
+            if not 0 <= r < m or not 0 <= c < n or (r,c) in visited or prev > heights[r][c]:
+                return
+            visited.add((r,c))
+            for dr, dc in directions:
+                nr, nc = r + dr, c + dc
+                dfs(nr, nc, heights[r][c], visited)
+        
+        pacific, atlantic = set(), set()
+        for r in range(m):
+            dfs(r, 0, -1, pacific)
+            dfs(r, n-1, -1, atlantic)
+        for c in range(1, n):
+            dfs(0, c, -1, pacific)
+            dfs(m-1, n-c-1, -1, atlantic)
+        
+        res = []
+        for r, c in pacific:
+            if (r,c) in atlantic:
                 res.append([r,c])
         return res

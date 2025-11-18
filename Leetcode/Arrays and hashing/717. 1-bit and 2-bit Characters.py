@@ -5,4 +5,4 @@ class Solution:
             if bits[i] == 1:
                 i += 1
             i += 1
-        return bits[i] == 0
+        return bits[i] == 0 # if bits[len(bits)-1] == 1, return false
